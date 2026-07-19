@@ -1,23 +1,15 @@
-'use client';
-import { useMemo, useState } from 'react';
+import seed from '../data/deals.json';
 
-type Case = { baseRoute:string; comboRoute:string; basePrice:number; comboPrice:number; notes:string };
-const samples: Case[] = [
-  {baseRoute:'TPE ↔ NRT', comboRoute:'TPE ↔ NRT + TPE ↔ KIX', basePrice:18000, comboPrice:19500, notes:'兩組日本來回只比東京來回多 8%。'},
-  {baseRoute:'TPE ↔ ICN', comboRoute:'TPE ↔ ICN + TPE ↔ PUS', basePrice:10500, comboPrice:11900, notes:'韓國雙城週中票，可能是促銷艙等。'},
-  {baseRoute:'TPE ↔ BKK', comboRoute:'TPE ↔ BKK + TPE ↔ HKG', basePrice:15500, comboPrice:17100, notes:'東南亞 + 香港組合接近一張熱門來回。'},
-];
-function score(base:number, combo:number){ const ratio=combo/base; const premium=(ratio-1)*100; let level='普通'; let tone='ok'; let s=30; if(ratio<=1){level='反常便宜';tone='hot';s=96}else if(ratio<=1.08){level='高度異常';tone='hot';s=90}else if(ratio<=1.18){level='值得查證';tone='warn';s=74}else if(ratio<=1.35){level='有點接近';tone='watch';s=55}else{s=25;level='不特別';tone='calm'} return {ratio,premium,level,tone,s}; }
-export default function Page(){
- const [baseRoute,setBaseRoute]=useState('TPE ↔ NRT'); const [comboRoute,setComboRoute]=useState('TPE ↔ NRT + TPE ↔ KIX'); const [basePrice,setBasePrice]=useState(18000); const [comboPrice,setComboPrice]=useState(19500); const [notes,setNotes]=useState('同樣出發地，兩組來回 / 四段組合只比一組來回貴一點。');
- const result=useMemo(()=>score(basePrice||1,comboPrice||0),[basePrice,comboPrice]);
- const diff=comboPrice-basePrice;
- function load(c:Case){setBaseRoute(c.baseRoute);setComboRoute(c.comboRoute);setBasePrice(c.basePrice);setComboPrice(c.comboPrice);setNotes(c.notes)}
- return <main><section className="hero"><div className="badge">Fare intelligence · 手動查價版</div><h1>四腳機票雷達</h1><p>不是訂票站，也不替你下單。這是一個給新手用的票價異常判讀工具：把「一組來回」和「四腳 / 兩組來回」價格放進來，看它是不是接近同價、值得人工查證。</p><div className="heroGrid"><div><b>{result.ratio.toFixed(2)}x</b><span>組合 / 基準倍率</span></div><div><b>{result.s}</b><span>異常分數</span></div><div><b>{result.level}</b><span>目前判讀</span></div></div></section>
- <section className="app"><div className="panel input"><div className="sectionHead"><span>Step 1</span><h2>輸入你查到的票價</h2></div><label>基準來回行程<input value={baseRoute} onChange={e=>setBaseRoute(e.target.value)}/></label><label>基準來回價格（TWD）<input type="number" value={basePrice} onChange={e=>setBasePrice(Number(e.target.value))}/></label><label>四腳 / 兩組來回組合<input value={comboRoute} onChange={e=>setComboRoute(e.target.value)}/></label><label>組合總價（TWD）<input type="number" value={comboPrice} onChange={e=>setComboPrice(Number(e.target.value))}/></label><label>備註<textarea value={notes} onChange={e=>setNotes(e.target.value)}/></label></div>
- <div className={`panel result ${result.tone}`}><div className="sectionHead"><span>Step 2</span><h2>判讀結果</h2></div><div className="score"><span>{result.s}</span><i style={{width:`${result.s}%`}}/></div><h3>{result.level}</h3><p className="big">組合票價是基準票價的 <b>{result.ratio.toFixed(2)} 倍</b>，多出 <b>{diff.toLocaleString()} 元</b>（{result.premium>=0?'+':''}{result.premium.toFixed(1)}%）。</p><div className="explain">{explain(result.ratio)}</div><a className="cta" href="https://www.google.com/travel/flights" target="_blank">去 Google Flights 人工查證</a></div></section>
- <section className="samples"><div className="sectionHead"><span>Templates</span><h2>新手直接套範例</h2></div>{samples.map(c=><button key={c.comboRoute} onClick={()=>load(c)}><b>{c.baseRoute}</b><span>{c.comboRoute}</span><small>{c.notes}</small></button>)}</section>
- <section className="risks"><Risk title="分開票風險" body="兩張票分開買時，前段延誤可能不會保護後段，轉機時間要自己保守估。"/><Risk title="行李與航變" body="行李可能不能直掛；航班取消或改時，航空公司不一定幫你接好另一張票。"/><Risk title="No-show 風險" body="不要任意跳過同一張票上的前段航班，後續航段可能被取消。"/><Risk title="價格會變動" body="這裡只做判讀，不保證票價。下單前請回官方或可信 OTA 重新查證。"/></section>
- <footer>Fare Anomaly Radar · Prototype by MS4 + Yui · 不提供訂票、不提供法律或旅遊保證。</footer></main>}
-function explain(r:number){ if(r<=1)return '四腳組合比基準來回還便宜，這非常反常：請立刻確認日期、幣別、行李、是否同航司與是否可正常出票。'; if(r<=1.08)return '只貴 8% 以內，屬於高價值異常：可能是促銷艙、停留規則或熱門單一路線過貴。'; if(r<=1.18)return '接近同價，值得開 Google Flights 或航空公司官網再查一次。'; if(r<=1.35)return '有點接近，但不一定值得為了省錢承擔分開票麻煩。'; return '組合價已明顯拉開，除非你本來就需要兩趟旅行，否則情報價值較低。'}
-function Risk({title,body}:{title:string;body:string}){return <article><b>{title}</b><p>{body}</p></article>}
+type Deal = typeof seed.deals[number];
+function money(n:number,c='TWD'){return new Intl.NumberFormat('zh-TW',{style:'currency',currency:c,maximumFractionDigits:0}).format(n)}
+function ratio(d:Deal){return d.comboPrice/d.basePrice}
+function score(d:Deal){const r=ratio(d); if(r<=1.08)return 92; if(r<=1.15)return 82; if(r<=1.18)return 70; return 55}
+function badge(c:string){return c==='high'?'高信心':c==='medium'?'待查證':'觀察中'}
+export default function Page(){const deals=[...seed.deals].sort((a,b)=>score(b)-score(a));return <main>
+ <section className="hero"><div className="kicker">Fare Anomaly Radar · 四腳機票情報</div><h1>快速看到<br/>哪些機票值得買</h1><p>每天掃描台灣出發的候選航線，找出「四腳 / 兩組來回」接近一組來回價的異常票價。現在是 scanner-ready demo：未接真 API 前，價格卡標示為待查證。</p><div className="stats"><div><b>{deals.length}</b><span>今日候選</span></div><div><b>{seed.scanScope.threshold}</b><span>異常門檻</span></div><div><b>{seed.scanScope.origins.join(' / ')}</b><span>出發地</span></div></div></section>
+ <section className="notice"><b>資料狀態：</b>{seed.scannerNote}</section>
+ <section className="toolbar"><a href="https://www.google.com/travel/flights" target="_blank">打開 Google Flights 查證</a><span>掃描區域：{seed.scanScope.regions.join('、')}</span></section>
+ <section className="deals">{deals.map(d=><article className={`deal ${d.confidence}`} key={d.id}><div className="dealTop"><span className="region">{d.region}</span><span className="conf">{badge(d.confidence)}</span></div><h2>{d.comboRoute}</h2><p className="base">基準：{d.baseRoute}</p><div className="priceGrid"><div><span>基準來回</span><b>{money(d.basePrice,d.currency)}</b></div><div><span>四腳組合</span><b>{money(d.comboPrice,d.currency)}</b></div><div><span>只多</span><b>{money(d.comboPrice-d.basePrice,d.currency)}</b></div><div><span>倍率</span><b>{ratio(d).toFixed(2)}x</b></div></div><div className="meter"><i style={{width:`${score(d)}%`}}/><em>{score(d)} 異常分</em></div><p className="why">{d.why}</p><div className="meta"><span>{d.origin}</span><span>{d.dates}</span><span>{d.airlines.join(' / ')}</span></div><details><summary>購買前風險檢查</summary><ul>{d.risks.map(r=><li key={r}>{r}</li>)}</ul></details><a className="cta" href={d.verifyUrl} target="_blank">查證這張票</a></article>)}</section>
+ <section className="how"><div><span>How it works</span><h2>它會怎麼幫你找票？</h2></div><ol><li>掃描 TPE / TSA / KHH 出發的熱門目的地。</li><li>比較「單一來回」與「兩組來回 / 四腳組合」。</li><li>若組合價接近單一來回，就產生情報卡。</li><li>你只看高信心卡，回 Google Flights 或航司官網查證。</li></ol></section>
+ <footer>不出票、不保證價格；這是便宜機票情報雷達。接入合法航班 API 後才會顯示 live deal。</footer>
+ </main>}

@@ -1,0 +1,61 @@
+{
+  "generatedAt": "2026-07-20T04:00:00+08:00",
+  "sourceStatus": "demo-seed-no-live-api-key",
+  "scannerNote": "目前未設定航班查價 API key；以下是情報站版型與掃描邏輯示範資料，不是即時可出票價格。接入 Amadeus/Kiwi/SerpAPI 後會改成 live deals。",
+  "scanScope": {
+    "origins": ["TPE", "TSA", "KHH"],
+    "regions": ["日本", "韓國", "香港/東南亞"],
+    "threshold": "combo / base <= 1.18x",
+    "tripLengths": [3, 4, 5, 7]
+  },
+  "deals": [
+    {
+      "id": "jp-tpe-nrt-kix-202609",
+      "region": "日本",
+      "confidence": "high",
+      "origin": "TPE",
+      "baseRoute": "台北 TPE ↔ 東京 NRT",
+      "comboRoute": "台北 TPE ↔ 東京 NRT + 台北 TPE ↔ 大阪 KIX",
+      "dates": "2026-09 中旬，4-5 天組合",
+      "basePrice": 18000,
+      "comboPrice": 19500,
+      "currency": "TWD",
+      "airlines": ["待查證"],
+      "why": "兩組日本來回只比東京單組來回多 8.3%，可能是東京基準票價偏高或大阪促銷艙等造成。",
+      "risks": ["分開票不受同一張票保護", "行李通常不直掛", "價格需回 Google Flights / 航司官網重查"],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "kr-tpe-icn-pus-202610",
+      "region": "韓國",
+      "confidence": "medium",
+      "origin": "TPE",
+      "baseRoute": "台北 TPE ↔ 首爾 ICN",
+      "comboRoute": "台北 TPE ↔ 首爾 ICN + 台北 TPE ↔ 釜山 PUS",
+      "dates": "2026-10 週中，3-4 天組合",
+      "basePrice": 10500,
+      "comboPrice": 11900,
+      "currency": "TWD",
+      "airlines": ["待查證"],
+      "why": "韓國雙城組合只多 13.3%，接近異常門檻，適合人工查證是否有 LCC 促銷。",
+      "risks": ["LCC 行李費可能讓價差消失", "廉航退改限制高", "需確認機場與日期不要填錯"],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "sea-tpe-bkk-hkg-202611",
+      "region": "香港/東南亞",
+      "confidence": "watch",
+      "origin": "TPE",
+      "baseRoute": "台北 TPE ↔ 曼谷 BKK",
+      "comboRoute": "台北 TPE ↔ 曼谷 BKK + 台北 TPE ↔ 香港 HKG",
+      "dates": "2026-11，5-7 天組合",
+      "basePrice": 15500,
+      "comboPrice": 17100,
+      "currency": "TWD",
+      "airlines": ["待查證"],
+      "why": "熱門曼谷票價若偏高，香港短程促銷可能讓雙旅行組合看起來接近同價。",
+      "risks": ["稅費與行李費需分開估", "不同 OTA 報價可能不可同時出票", "航變時需自行處理兩張票"],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    }
+  ]
+}
