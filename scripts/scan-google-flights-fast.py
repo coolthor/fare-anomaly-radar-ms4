@@ -67,10 +67,12 @@ def main():
                 "comboRoute": f"{ORIGINS[origin]} ↔ {DESTS[a]} + {ORIGINS[origin]} ↔ {DESTS[b]}",
                 "dates": f"{OUT} 出發 / {RET} 回程（one-way legs summed）",
                 "basePrice": base['price'],
+                "separateTotalPrice": combo_price,
+                "bundledPrice": None,
                 "comboPrice": combo_price,
                 "currency": CURRENCY,
                 "airlines": sorted(set(rts[a]['airlines']+rts[b]['airlines']))[:6],
-                "why": f"低頻 Google Flights scraper 估算：第二組來回讓總價變成 {ratio:.2f}x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+                "why": f"低頻 Google Flights scraper 目前先算「分開買兩組來回」總價；真正的便宜判斷應比較「分開買總價」與「一起買/多城市價」。fast-flights multi-city 尚不穩，本欄需回 Google Flights 查證。",
                 "risks": ["這是低頻 scraper 估算，不保證可出票", "one-way 加總可能不同於實際來回票價", "分開票行李與航變保護較弱"],
                 "verifyUrl": "https://www.google.com/travel/flights"
             })
@@ -78,7 +80,7 @@ def main():
         "generatedAt": datetime.now().astimezone().isoformat(timespec='seconds'),
         "sourceStatus": "live-google-flights-scraper-low-frequency-expanded",
         "scannerNote": "使用 fast-flights 低頻查 Google Flights one-way 價格並加總估算；不是官方 API，僅作情報候選，購買前必須人工查證。本輪加入高雄、東南亞與澳洲。",
-        "scanScope": {"origins":list(ORIGINS.keys()),"regions":["日本","韓國","香港/東南亞","澳洲"],"threshold":"combo / base <= 1.25x preferred","tripLengths":[5],"dates":[OUT,RET],"destinations":SCAN_DESTS},
+        "scanScope": {"origins":list(ORIGINS.keys()),"regions":["日本","韓國","香港/東南亞","澳洲"],"threshold":"bundled / separate_total <= 0.9 preferred; bundled unavailable = show research candidate","tripLengths":[5],"dates":[OUT,RET],"destinations":SCAN_DESTS},
         "roundtrips": all_roundtrips,
         "deals": sorted(all_deals, key=lambda d:d['comboPrice']/d['basePrice'])
     }
