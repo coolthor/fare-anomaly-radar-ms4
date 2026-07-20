@@ -1,199 +1,1053 @@
 {
-  "generatedAt": "2026-07-20T13:09:36+08:00",
-  "sourceStatus": "live-google-flights-scraper-low-frequency",
-  "scannerNote": "使用 fast-flights 低頻查 Google Flights one-way 價格並加總估算；不是官方 API，僅作情報候選，購買前必須人工查證。",
+  "generatedAt": "2026-07-20T13:19:17+08:00",
+  "sourceStatus": "live-google-flights-scraper-low-frequency-expanded",
+  "scannerNote": "使用 fast-flights 低頻查 Google Flights one-way 價格並加總估算；不是官方 API，僅作情報候選，購買前必須人工查證。本輪加入高雄、東南亞與澳洲。",
   "scanScope": {
     "origins": [
-      "TPE"
+      "TPE",
+      "KHH"
     ],
     "regions": [
       "日本",
       "韓國",
-      "香港/東南亞"
+      "香港/東南亞",
+      "澳洲"
     ],
-    "threshold": "combo / base <= 1.18x",
+    "threshold": "combo / base <= 1.25x preferred",
     "tripLengths": [
       5
     ],
     "dates": [
       "2026-09-15",
       "2026-09-20"
+    ],
+    "destinations": [
+      "NRT",
+      "KIX",
+      "FUK",
+      "OKA",
+      "ICN",
+      "PUS",
+      "HKG",
+      "BKK",
+      "SIN",
+      "KUL",
+      "SGN",
+      "DAD",
+      "SYD",
+      "MEL",
+      "BNE",
+      "PER"
     ]
   },
   "roundtrips": {
-    "NRT": {
-      "dest": "NRT",
-      "label": "東京 NRT",
-      "price": 11739,
-      "legs": [
-        {
-          "price": 4590,
-          "airlines": [
-            "樂桃航空"
-          ],
-          "type": "MM",
-          "from": "TPE",
-          "to": "NRT",
-          "date": "2026-09-15",
-          "departure": [
-            2026,
-            9,
-            15
-          ]
-        },
-        {
-          "price": 7149,
-          "airlines": [
-            "樂桃航空"
-          ],
-          "type": "MM",
-          "from": "NRT",
-          "to": "TPE",
-          "date": "2026-09-20",
-          "departure": [
-            2026,
-            9,
-            20
-          ]
-        }
-      ],
-      "airlines": [
-        "樂桃航空"
-      ]
+    "TPE": {
+      "NRT": {
+        "origin": "TPE",
+        "dest": "NRT",
+        "label": "東京 NRT",
+        "price": 11739,
+        "legs": [
+          {
+            "price": 4590,
+            "airlines": [
+              "樂桃航空"
+            ],
+            "type": "MM",
+            "from": "TPE",
+            "to": "NRT",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 7149,
+            "airlines": [
+              "樂桃航空"
+            ],
+            "type": "MM",
+            "from": "NRT",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "樂桃航空"
+        ]
+      },
+      "KIX": {
+        "origin": "TPE",
+        "dest": "KIX",
+        "label": "大阪 KIX",
+        "price": 9525,
+        "legs": [
+          {
+            "price": 3863,
+            "airlines": [
+              "捷星日本航空"
+            ],
+            "type": "GK",
+            "from": "TPE",
+            "to": "KIX",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 5662,
+            "airlines": [
+              "捷星日本航空"
+            ],
+            "type": "GK",
+            "from": "KIX",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "捷星日本航空"
+        ]
+      },
+      "FUK": {
+        "origin": "TPE",
+        "dest": "FUK",
+        "label": "福岡 FUK",
+        "price": 12230,
+        "legs": [
+          {
+            "price": 4546,
+            "airlines": [
+              "Trinity Airways"
+            ],
+            "type": "TW",
+            "from": "TPE",
+            "to": "FUK",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 7684,
+            "airlines": [
+              "捷星日本航空"
+            ],
+            "type": "GK",
+            "from": "FUK",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "Trinity Airways",
+          "捷星日本航空"
+        ]
+      },
+      "OKA": {
+        "origin": "TPE",
+        "dest": "OKA",
+        "label": "沖繩 OKA",
+        "price": 8814,
+        "legs": [
+          {
+            "price": 3890,
+            "airlines": [
+              "樂桃航空"
+            ],
+            "type": "MM",
+            "from": "TPE",
+            "to": "OKA",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 4924,
+            "airlines": [
+              "樂桃航空"
+            ],
+            "type": "MM",
+            "from": "OKA",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "樂桃航空"
+        ]
+      },
+      "ICN": {
+        "origin": "TPE",
+        "dest": "ICN",
+        "label": "首爾 ICN",
+        "price": 10117,
+        "legs": [
+          {
+            "price": 4687,
+            "airlines": [
+              "真航空"
+            ],
+            "type": "LJ",
+            "from": "TPE",
+            "to": "ICN",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 5430,
+            "airlines": [
+              "韓亞航空"
+            ],
+            "type": "OZ",
+            "from": "ICN",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "真航空",
+          "韓亞航空"
+        ]
+      },
+      "PUS": null,
+      "HKG": null,
+      "BKK": {
+        "origin": "TPE",
+        "dest": "BKK",
+        "label": "曼谷 BKK",
+        "price": 8700,
+        "legs": [
+          {
+            "price": 5280,
+            "airlines": [
+              "THAI"
+            ],
+            "type": "TG",
+            "from": "TPE",
+            "to": "BKK",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 3420,
+            "airlines": [
+              "泰越捷航空"
+            ],
+            "type": "VZ",
+            "from": "BKK",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "THAI",
+          "泰越捷航空"
+        ]
+      },
+      "SIN": {
+        "origin": "TPE",
+        "dest": "SIN",
+        "label": "新加坡 SIN",
+        "price": 7010,
+        "legs": [
+          {
+            "price": 3026,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "TPE",
+            "to": "SIN",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 3984,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "SIN",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "酷航"
+        ]
+      },
+      "KUL": {
+        "origin": "TPE",
+        "dest": "KUL",
+        "label": "吉隆坡 KUL",
+        "price": 7867,
+        "legs": [
+          {
+            "price": 3636,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "TPE",
+            "to": "KUL",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 4231,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "KUL",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "酷航"
+        ]
+      },
+      "SGN": {
+        "origin": "TPE",
+        "dest": "SGN",
+        "label": "胡志明 SGN",
+        "price": 8500,
+        "legs": [
+          {
+            "price": 3817,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "TPE",
+            "to": "SGN",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 4683,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "SGN",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "酷航"
+        ]
+      },
+      "DAD": {
+        "origin": "TPE",
+        "dest": "DAD",
+        "label": "峴港 DAD",
+        "price": 12955,
+        "legs": [
+          {
+            "price": 5347,
+            "airlines": [
+              "宿霧太平洋航空"
+            ],
+            "type": "5J",
+            "from": "TPE",
+            "to": "DAD",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 7608,
+            "airlines": [
+              "真航空"
+            ],
+            "type": "LJ",
+            "from": "DAD",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "宿霧太平洋航空",
+          "真航空"
+        ]
+      },
+      "SYD": {
+        "origin": "TPE",
+        "dest": "SYD",
+        "label": "雪梨 SYD",
+        "price": 21357,
+        "legs": [
+          {
+            "price": 10758,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "TPE",
+            "to": "SYD",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 10599,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "SYD",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "越捷航空",
+          "酷航"
+        ]
+      },
+      "MEL": {
+        "origin": "TPE",
+        "dest": "MEL",
+        "label": "墨爾本 MEL",
+        "price": 29373,
+        "legs": [
+          {
+            "price": 14433,
+            "airlines": [
+              "國泰航空"
+            ],
+            "type": "CX",
+            "from": "TPE",
+            "to": "MEL",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 14940,
+            "airlines": [
+              "酷航"
+            ],
+            "type": "TR",
+            "from": "MEL",
+            "to": "TPE",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "國泰航空",
+          "酷航"
+        ]
+      },
+      "BNE": null,
+      "PER": null
     },
-    "KIX": {
-      "dest": "KIX",
-      "label": "大阪 KIX",
-      "price": 9525,
-      "legs": [
-        {
-          "price": 3863,
-          "airlines": [
-            "捷星日本航空"
-          ],
-          "type": "GK",
-          "from": "TPE",
-          "to": "KIX",
-          "date": "2026-09-15",
-          "departure": [
-            2026,
-            9,
-            15
-          ]
-        },
-        {
-          "price": 5662,
-          "airlines": [
-            "捷星日本航空"
-          ],
-          "type": "GK",
-          "from": "KIX",
-          "to": "TPE",
-          "date": "2026-09-20",
-          "departure": [
-            2026,
-            9,
-            20
-          ]
-        }
-      ],
-      "airlines": [
-        "捷星日本航空"
-      ]
-    },
-    "ICN": {
-      "dest": "ICN",
-      "label": "首爾 ICN",
-      "price": 10117,
-      "legs": [
-        {
-          "price": 4687,
-          "airlines": [
-            "真航空"
-          ],
-          "type": "LJ",
-          "from": "TPE",
-          "to": "ICN",
-          "date": "2026-09-15",
-          "departure": [
-            2026,
-            9,
-            15
-          ]
-        },
-        {
-          "price": 5430,
-          "airlines": [
-            "韓亞航空"
-          ],
-          "type": "OZ",
-          "from": "ICN",
-          "to": "TPE",
-          "date": "2026-09-20",
-          "departure": [
-            2026,
-            9,
-            20
-          ]
-        }
-      ],
-      "airlines": [
-        "真航空",
-        "韓亞航空"
-      ]
-    },
-    "PUS": null,
-    "HKG": null,
-    "BKK": {
-      "dest": "BKK",
-      "label": "曼谷 BKK",
-      "price": 8700,
-      "legs": [
-        {
-          "price": 5280,
-          "airlines": [
-            "THAI"
-          ],
-          "type": "TG",
-          "from": "TPE",
-          "to": "BKK",
-          "date": "2026-09-15",
-          "departure": [
-            2026,
-            9,
-            15
-          ]
-        },
-        {
-          "price": 3420,
-          "airlines": [
-            "泰越捷航空"
-          ],
-          "type": "VZ",
-          "from": "BKK",
-          "to": "TPE",
-          "date": "2026-09-20",
-          "departure": [
-            2026,
-            9,
-            20
-          ]
-        }
-      ],
-      "airlines": [
-        "THAI",
-        "泰越捷航空"
-      ]
+    "KHH": {
+      "NRT": {
+        "origin": "KHH",
+        "dest": "NRT",
+        "label": "東京 NRT",
+        "price": 14526,
+        "legs": [
+          {
+            "price": 5155,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "KHH",
+            "to": "NRT",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 9371,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "NRT",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "香港快運航空"
+        ]
+      },
+      "KIX": {
+        "origin": "KHH",
+        "dest": "KIX",
+        "label": "大阪 KIX",
+        "price": 10873,
+        "legs": [
+          {
+            "price": 4646,
+            "airlines": [
+              "Trinity Airways"
+            ],
+            "type": "TW",
+            "from": "KHH",
+            "to": "KIX",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 6227,
+            "airlines": [
+              "捷星日本航空"
+            ],
+            "type": "GK",
+            "from": "KIX",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "Trinity Airways",
+          "捷星日本航空"
+        ]
+      },
+      "FUK": {
+        "origin": "KHH",
+        "dest": "FUK",
+        "label": "福岡 FUK",
+        "price": 11126,
+        "legs": [
+          {
+            "price": 4546,
+            "airlines": [
+              "Trinity Airways"
+            ],
+            "type": "TW",
+            "from": "KHH",
+            "to": "FUK",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 6580,
+            "airlines": [
+              "捷星日本航空"
+            ],
+            "type": "GK",
+            "from": "FUK",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "Trinity Airways",
+          "捷星日本航空"
+        ]
+      },
+      "OKA": {
+        "origin": "KHH",
+        "dest": "OKA",
+        "label": "沖繩 OKA",
+        "price": 9640,
+        "legs": [
+          {
+            "price": 4751,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "KHH",
+            "to": "OKA",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 4889,
+            "airlines": [
+              "泰國獅航"
+            ],
+            "type": "SL",
+            "from": "OKA",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "泰國獅航",
+          "香港快運航空"
+        ]
+      },
+      "ICN": {
+        "origin": "KHH",
+        "dest": "ICN",
+        "label": "首爾 ICN",
+        "price": 10152,
+        "legs": [
+          {
+            "price": 5100,
+            "airlines": [
+              "Trinity Airways"
+            ],
+            "type": "TW",
+            "from": "KHH",
+            "to": "ICN",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 5052,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "ICN",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "Trinity Airways",
+          "香港快運航空"
+        ]
+      },
+      "PUS": {
+        "origin": "KHH",
+        "dest": "PUS",
+        "label": "釜山 PUS",
+        "price": 12728,
+        "legs": [
+          {
+            "price": 5846,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "KHH",
+            "to": "PUS",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 6882,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "PUS",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "香港快運航空"
+        ]
+      },
+      "HKG": {
+        "origin": "KHH",
+        "dest": "HKG",
+        "label": "香港 HKG",
+        "price": 6858,
+        "legs": [
+          {
+            "price": 3650,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "KHH",
+            "to": "HKG",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 3208,
+            "airlines": [
+              "香港快運航空"
+            ],
+            "type": "UO",
+            "from": "HKG",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "香港快運航空"
+        ]
+      },
+      "BKK": {
+        "origin": "KHH",
+        "dest": "BKK",
+        "label": "曼谷 BKK",
+        "price": 9585,
+        "legs": [
+          {
+            "price": 4205,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "KHH",
+            "to": "BKK",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 5380,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "BKK",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "越捷航空"
+        ]
+      },
+      "SIN": null,
+      "KUL": null,
+      "SGN": {
+        "origin": "KHH",
+        "dest": "SGN",
+        "label": "胡志明 SGN",
+        "price": 5660,
+        "legs": [
+          {
+            "price": 2677,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "KHH",
+            "to": "SGN",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 2983,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "SGN",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "越捷航空"
+        ]
+      },
+      "DAD": null,
+      "SYD": null,
+      "MEL": null,
+      "BNE": {
+        "origin": "KHH",
+        "dest": "BNE",
+        "label": "布里斯本 BNE",
+        "price": 30307,
+        "legs": [
+          {
+            "price": 9547,
+            "airlines": [
+              "越捷航空"
+            ],
+            "type": "VJ",
+            "from": "KHH",
+            "to": "BNE",
+            "date": "2026-09-15",
+            "departure": [
+              2026,
+              9,
+              15
+            ]
+          },
+          {
+            "price": 20760,
+            "airlines": [
+              "國泰航空"
+            ],
+            "type": "CX",
+            "from": "BNE",
+            "to": "KHH",
+            "date": "2026-09-20",
+            "departure": [
+              2026,
+              9,
+              20
+            ]
+          }
+        ],
+        "airlines": [
+          "國泰航空",
+          "越捷航空"
+        ]
+      },
+      "PER": null
     }
   },
   "deals": [
     {
-      "id": "gflights-nrt-kix-2026-09-15",
+      "id": "gflights-khh-bkk-hkg-2026-09-15",
+      "region": "東南亞+香港",
+      "confidence": "watch",
+      "origin": "KHH",
+      "baseRoute": "高雄 KHH ↔ 曼谷 BKK",
+      "comboRoute": "高雄 KHH ↔ 曼谷 BKK + 高雄 KHH ↔ 香港 HKG",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 9585,
+      "comboPrice": 16443,
+      "currency": "TWD",
+      "airlines": [
+        "越捷航空",
+        "香港快運航空"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.72x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-tpe-fuk-oka-2026-09-15",
+      "region": "日本短程",
+      "confidence": "watch",
+      "origin": "TPE",
+      "baseRoute": "台北桃園 TPE ↔ 福岡 FUK",
+      "comboRoute": "台北桃園 TPE ↔ 福岡 FUK + 台北桃園 TPE ↔ 沖繩 OKA",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 12230,
+      "comboPrice": 21044,
+      "currency": "TWD",
+      "airlines": [
+        "Trinity Airways",
+        "捷星日本航空",
+        "樂桃航空"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.72x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-khh-nrt-kix-2026-09-15",
+      "region": "日本雙城",
+      "confidence": "watch",
+      "origin": "KHH",
+      "baseRoute": "高雄 KHH ↔ 東京 NRT",
+      "comboRoute": "高雄 KHH ↔ 東京 NRT + 高雄 KHH ↔ 大阪 KIX",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 14526,
+      "comboPrice": 25399,
+      "currency": "TWD",
+      "airlines": [
+        "Trinity Airways",
+        "捷星日本航空",
+        "香港快運航空"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.75x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-tpe-nrt-kix-2026-09-15",
       "region": "日本雙城",
       "confidence": "watch",
       "origin": "TPE",
-      "baseRoute": "台北 TPE ↔ 東京 NRT",
-      "comboRoute": "台北 TPE ↔ 東京 NRT + 台北 TPE ↔ 大阪 KIX",
+      "baseRoute": "台北桃園 TPE ↔ 東京 NRT",
+      "comboRoute": "台北桃園 TPE ↔ 東京 NRT + 台北桃園 TPE ↔ 大阪 KIX",
       "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
       "basePrice": 11739,
       "comboPrice": 21264,
@@ -203,6 +1057,124 @@
         "樂桃航空"
       ],
       "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.81x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-khh-fuk-oka-2026-09-15",
+      "region": "日本短程",
+      "confidence": "watch",
+      "origin": "KHH",
+      "baseRoute": "高雄 KHH ↔ 福岡 FUK",
+      "comboRoute": "高雄 KHH ↔ 福岡 FUK + 高雄 KHH ↔ 沖繩 OKA",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 11126,
+      "comboPrice": 20766,
+      "currency": "TWD",
+      "airlines": [
+        "Trinity Airways",
+        "捷星日本航空",
+        "泰國獅航",
+        "香港快運航空"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.87x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-tpe-sin-kul-2026-09-15",
+      "region": "星馬雙城",
+      "confidence": "watch",
+      "origin": "TPE",
+      "baseRoute": "台北桃園 TPE ↔ 新加坡 SIN",
+      "comboRoute": "台北桃園 TPE ↔ 新加坡 SIN + 台北桃園 TPE ↔ 吉隆坡 KUL",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 7010,
+      "comboPrice": 14877,
+      "currency": "TWD",
+      "airlines": [
+        "酷航"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 2.12x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-khh-icn-pus-2026-09-15",
+      "region": "韓國雙城",
+      "confidence": "watch",
+      "origin": "KHH",
+      "baseRoute": "高雄 KHH ↔ 首爾 ICN",
+      "comboRoute": "高雄 KHH ↔ 首爾 ICN + 高雄 KHH ↔ 釜山 PUS",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 10152,
+      "comboPrice": 22880,
+      "currency": "TWD",
+      "airlines": [
+        "Trinity Airways",
+        "香港快運航空"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 2.25x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-tpe-syd-mel-2026-09-15",
+      "region": "澳洲雙城",
+      "confidence": "watch",
+      "origin": "TPE",
+      "baseRoute": "台北桃園 TPE ↔ 雪梨 SYD",
+      "comboRoute": "台北桃園 TPE ↔ 雪梨 SYD + 台北桃園 TPE ↔ 墨爾本 MEL",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 21357,
+      "comboPrice": 50730,
+      "currency": "TWD",
+      "airlines": [
+        "國泰航空",
+        "越捷航空",
+        "酷航"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 2.38x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "risks": [
+        "這是低頻 scraper 估算，不保證可出票",
+        "one-way 加總可能不同於實際來回票價",
+        "分開票行李與航變保護較弱"
+      ],
+      "verifyUrl": "https://www.google.com/travel/flights"
+    },
+    {
+      "id": "gflights-tpe-sgn-dad-2026-09-15",
+      "region": "越南雙城",
+      "confidence": "watch",
+      "origin": "TPE",
+      "baseRoute": "台北桃園 TPE ↔ 胡志明 SGN",
+      "comboRoute": "台北桃園 TPE ↔ 胡志明 SGN + 台北桃園 TPE ↔ 峴港 DAD",
+      "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
+      "basePrice": 8500,
+      "comboPrice": 21455,
+      "currency": "TWD",
+      "airlines": [
+        "宿霧太平洋航空",
+        "真航空",
+        "酷航"
+      ],
+      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 2.52x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
       "risks": [
         "這是低頻 scraper 估算，不保證可出票",
         "one-way 加總可能不同於實際來回票價",
