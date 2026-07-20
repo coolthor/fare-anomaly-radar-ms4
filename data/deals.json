@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-07-20T13:19:17+08:00",
-  "sourceStatus": "live-google-flights-scraper-low-frequency-expanded",
-  "scannerNote": "使用 fast-flights 低頻查 Google Flights one-way 價格並加總估算；不是官方 API，僅作情報候選，購買前必須人工查證。本輪加入高雄、東南亞與澳洲。",
+  "sourceStatus": "mixed-fast-flights-separate-plus-searchapi-bundled-probe",
+  "scannerNote": "分開買總價由 fast-flights 低頻估算；TPE 日本雙城已用 SearchApi Google Flights multi-city 實測 bundled price。SearchApi 額度有限，後續應只掃 shortlist。",
   "scanScope": {
     "origins": [
       "TPE",
@@ -991,7 +991,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 16443,
+      "bundledPrice": null
     },
     {
       "id": "gflights-tpe-fuk-oka-2026-09-15",
@@ -1015,7 +1017,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 21044,
+      "bundledPrice": null
     },
     {
       "id": "gflights-khh-nrt-kix-2026-09-15",
@@ -1039,30 +1043,35 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 25399,
+      "bundledPrice": null
     },
     {
       "id": "gflights-tpe-nrt-kix-2026-09-15",
       "region": "日本雙城",
-      "confidence": "watch",
+      "confidence": "medium",
       "origin": "TPE",
       "baseRoute": "台北桃園 TPE ↔ 東京 NRT",
       "comboRoute": "台北桃園 TPE ↔ 東京 NRT + 台北桃園 TPE ↔ 大阪 KIX",
       "dates": "2026-09-15 出發 / 2026-09-20 回程（one-way legs summed）",
       "basePrice": 11739,
-      "comboPrice": 21264,
+      "comboPrice": 16905,
       "currency": "TWD",
       "airlines": [
         "捷星日本航空",
         "樂桃航空"
       ],
-      "why": "低頻 Google Flights scraper 估算：第二組來回讓總價變成 1.81x。這是 one-way legs 加總，需回 Google Flights 查證實際來回/多城市票價。",
+      "why": "SearchApi Google Flights multi-city 實測回傳整組 bundled 候選最低約 NT$16,905；分開買估算 NT$21,264，約省 20.5%。購買前仍需回 Google Flights/供應商付款頁查證。",
       "risks": [
         "這是低頻 scraper 估算，不保證可出票",
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 21264,
+      "bundledPrice": 16905,
+      "source": "searchapi-google-flights-multicity-probe"
     },
     {
       "id": "gflights-khh-fuk-oka-2026-09-15",
@@ -1087,7 +1096,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 20766,
+      "bundledPrice": null
     },
     {
       "id": "gflights-tpe-sin-kul-2026-09-15",
@@ -1109,7 +1120,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 14877,
+      "bundledPrice": null
     },
     {
       "id": "gflights-khh-icn-pus-2026-09-15",
@@ -1132,7 +1145,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 22880,
+      "bundledPrice": null
     },
     {
       "id": "gflights-tpe-syd-mel-2026-09-15",
@@ -1156,7 +1171,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 50730,
+      "bundledPrice": null
     },
     {
       "id": "gflights-tpe-sgn-dad-2026-09-15",
@@ -1180,7 +1197,9 @@
         "one-way 加總可能不同於實際來回票價",
         "分開票行李與航變保護較弱"
       ],
-      "verifyUrl": "https://www.google.com/travel/flights"
+      "verifyUrl": "https://www.google.com/travel/flights",
+      "separateTotalPrice": 21455,
+      "bundledPrice": null
     }
   ]
 }
